@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>考勤打卡</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#f0f2f5;height:100vh;display:flex;align-items:center;justify-content:center}
+        .box{background:#fff;padding:40px;border-radius:10px;text-align:center;width:400px;box-shadow:0 2px 12px #0000001a}
+        h2{margin-bottom:20px;color:#222}
+        #time{font-size:22px;margin-bottom:25px;color:#444}
+        button{width:140px;padding:12px;margin:0 8px;border:none;border-radius:6px;font-size:16px;cursor:pointer}
+        .in{background:#27ae60;color:white}
+        .out{background:#e74c3c;color:white}
+        .back{margin-top:20px;background:#999;color:white}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>考勤打卡</h2>
+        <div id="time"></div>
+        <button class="in" onclick="alert('✅ 上班打卡成功！')">上班打卡</button>
+        <button class="out" onclick="alert('✅ 下班打卡成功！')">下班打卡</button>
+        <br>
+        <button class="back" onclick="location.href='index.html'">退出登录</button>
+    </div>
+
+    <script>
+        function showTime(){
+            let now=new Date();
+            document.getElementById("time").innerText=now.toLocaleString();
+        }
+        showTime();
+        setInterval(showTime,1000);
+    </script>
+</body>
+</html>
+
